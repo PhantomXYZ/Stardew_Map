@@ -34,6 +34,19 @@
     L.imageOverlay('Stardew_Valley_Map.jpg', bounds).addTo(map);
 
     map.fitBounds(bounds);
+    // Helper: click anywhere on the map to see its coordinates
+map.on('click', function (e) {
+  const y = e.latlng.lat.toFixed(1); // vertical
+  const x = e.latlng.lng.toFixed(1); // horizontal
+
+  L.popup()
+    .setLatLng(e.latlng)
+    .setContent(`y: ${y}, x: ${x}`)
+    .openOn(map);
+
+  console.log(`Clicked at: [${y}, ${x}]`);
+});
+
 
     // Example marker: Pierre's General Store
     L.marker([600, 950]).addTo(map)
