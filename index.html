@@ -24,6 +24,52 @@
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
+    // Custom marker icons
+const iconGreen = new L.Icon({
+  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-green.png',
+  shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+});
+
+const iconBlue = new L.Icon({
+  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-blue.png',
+  shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+});
+
+const iconLightBlue = new L.Icon({
+  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-cyan.png',
+  shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+});
+
+const iconBrown = new L.Icon({
+  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-brown.png',
+  shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+});
+
+const iconBlack = new L.Icon({
+  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-black.png',
+  shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+});
+
     // Map image size (update if your image is different!)
     const mapWidth = 1920;
     const mapHeight = 1080;
@@ -40,7 +86,8 @@
     L.imageOverlay('Stardew_Valley_Map.jpg', bounds).addTo(map);
 
     map.fitBounds(bounds);
-    // Helper: click anywhere on the map to see its coordinates
+    
+   // Helper: click anywhere on the map to see its coordinates
 map.on('click', function (e) {
   const y = e.latlng.lat.toFixed(1); // vertical
   const x = e.latlng.lng.toFixed(1); // horizontal
@@ -52,15 +99,46 @@ map.on('click', function (e) {
 
   console.log(`Clicked at: [${y}, ${x}]`);
 });
+    
+// 1. Farmhouse (Green)
+L.marker([646.2, 767.7], { icon: iconGreen }).addTo(map)
+  .bindPopup("Farmhouse");
+
+// 2. Pierre's General Store (Blue)
+L.marker([574.5, 1134.4], { icon: iconBlue }).addTo(map)
+  .bindPopup("Pierre's General Store");
+
+// 3. Carpenter's Shop (Blue)
+L.marker([803.0, 1182.9], { icon: iconBlue }).addTo(map)
+  .bindPopup("Carpenter's Shop");
+
+// 4. Blacksmith (Blue)
+L.marker([454.0, 1376.7], { icon: iconBlue }).addTo(map)
+  .bindPopup("Blacksmith (Clint)");
+
+// 5. Community Center (Blue)
+L.marker([713.5, 1138.4], { icon: iconBlue }).addTo(map)
+  .bindPopup("Community Center");
+
+// 6. Mountain Lake Fishing Spot (Light Blue)
+L.marker([785.0, 1377.3], { icon: iconLightBlue }).addTo(map)
+  .bindPopup("Mountain Lake – Fishing");
+
+// 7. Cindersap Forest Foraging Area (Brown)
+L.marker([431.1, 566.0], { icon: iconBrown }).addTo(map)
+  .bindPopup("Cindersap Forest – Foraging Route");
+
+// 8. Mines Entrance (Black)
+L.marker([883.8, 1410.2], { icon: iconBlack }).addTo(map)
+  .bindPopup("Mines Entrance");
+
+// 9. Beach Pier (Fishing) (Light Blue)
+L.marker([150.3, 1337.4], { icon: iconLightBlue }).addTo(map)
+  .bindPopup("Beach Pier – Fishing");
 
 
-    // Example marker: Pierre's General Store
-    L.marker([600, 950]).addTo(map)
-      .bindPopup("Pierre's General Store");
+ 
 
-    // Example marker: Player Farm
-    L.marker([700, 500]).addTo(map)
-      .bindPopup("Your Farm");
   </script>
 </body>
 </html>
