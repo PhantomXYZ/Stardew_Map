@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Stardew Valley Interactive Map</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <style>
+    #map {
+      height: 700px;
+      width: 100%;
+      border: 2px solid #333;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Stardew Valley Interactive Map</h2>
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    // Map image size (update if your image is different!)
+    const mapWidth = 1920;
+    const mapHeight = 1080;
+
+    const map = L.map('map', {
+      crs: L.CRS.Simple,
+      minZoom: -2,
+      maxZoom: 2
+    });
+
+    const bounds = [[0, 0], [mapHeight, mapWidth]];
+
+    // IMPORTANT: use a relative file path, not a Windows path!
+    L.imageOverlay('stardew.jpg', bounds).addTo(map);
+
+    map.fitBounds(bounds);
+
+    // Example marker: Pierre's General Store
+    L.marker([600, 950]).addTo(map)
+      .bindPopup("Pierre's General Store");
+
+    // Example marker: Player Farm
+    L.marker([700, 500]).addTo(map)
+      .bindPopup("Your Farm");
+  </script>
+</body>
+</html>
