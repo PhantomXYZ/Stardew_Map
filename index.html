@@ -43,8 +43,9 @@ const iconBlue = new L.Icon({
   shadowSize: [41, 41]
 });
 
-const iconLightBlue = new L.Icon({
-  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-cyan.png',
+// Fishing (yellow)
+const iconYellow = new L.Icon({
+  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-yellow.png',
   shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
   iconSize: [25, 41],
   iconAnchor: [12, 41],
@@ -52,8 +53,9 @@ const iconLightBlue = new L.Icon({
   shadowSize: [41, 41]
 });
 
-const iconBrown = new L.Icon({
-  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-brown.png',
+// Foraging (orange)
+const iconOrange = new L.Icon({
+  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-orange.png',
   shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
   iconSize: [25, 41],
   iconAnchor: [12, 41],
@@ -61,6 +63,7 @@ const iconBrown = new L.Icon({
   shadowSize: [41, 41]
 });
 
+// Mines (black)
 const iconBlack = new L.Icon({
   iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-black.png',
   shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
@@ -69,6 +72,7 @@ const iconBlack = new L.Icon({
   popupAnchor: [1, -34],
   shadowSize: [41, 41]
 });
+
 
     // Map image size (update if your image is different!)
     const mapWidth = 1920;
@@ -106,26 +110,26 @@ L.marker([646.2, 767.7], { icon: iconGreen }).addTo(map)
 
 // 2. Pierre's General Store (Blue)
 L.marker([574.5, 1134.4], { icon: iconBlue }).addTo(map)
-  .bindPopup("Pierre's General Store");
+  .bindPopup("<b>Pierre's General Store</b><br><i>Hours:</i> 9am – 5pm<br><i>Closed:</i> Wednesdays (Year 1)");
 
 // 3. Carpenter's Shop (Blue)
 L.marker([803.0, 1182.9], { icon: iconBlue }).addTo(map)
-  .bindPopup("Carpenter's Shop");
+  .bindPopup("<b>Carpenter's Shop</b><br><i>Open:</i> 9am – 5pm<br><i>Closed:</i> Tuesdays");
 
 // 4. Blacksmith (Blue)
 L.marker([454.0, 1376.7], { icon: iconBlue }).addTo(map)
-  .bindPopup("Blacksmith (Clint)");
+  .bindPopup("<b>Blacksmith (Clint)</b><br>Open: 9am – 4pm<br>Closed: Fridays if visiting Community Center cutscene");
 
 // 5. Community Center (Blue)
 L.marker([713.5, 1138.4], { icon: iconBlue }).addTo(map)
-  .bindPopup("Community Center");
+  .bindPopup("<b>Community Center</b><br>Open: 8am – 8pm<br>Unlocked: Spring 5");
 
 // 6. Mountain Lake Fishing Spot (Light Blue)
-L.marker([785.0, 1377.3], { icon: iconLightBlue }).addTo(map)
+L.marker([785.0, 1377.3], { icon: iconYellow }).addTo(map)
   .bindPopup("Mountain Lake – Fishing");
 
 // 7. Cindersap Forest Foraging Area (Brown)
-L.marker([431.1, 566.0], { icon: iconBrown }).addTo(map)
+L.marker([431.1, 566.0], { icon: iconOrange }).addTo(map)
   .bindPopup("Cindersap Forest – Foraging Route");
 
 // 8. Mines Entrance (Black)
@@ -133,8 +137,9 @@ L.marker([883.8, 1410.2], { icon: iconBlack }).addTo(map)
   .bindPopup("Mines Entrance");
 
 // 9. Beach Pier (Fishing) (Light Blue)
-L.marker([150.3, 1337.4], { icon: iconLightBlue }).addTo(map)
+L.marker([150.3, 1337.4], { icon: iconYellow }).addTo(map)
   .bindPopup("Beach Pier – Fishing");
+
 
 
  
